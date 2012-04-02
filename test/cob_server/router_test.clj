@@ -42,3 +42,9 @@
 (deftest test-get-file1
   (let [req {:request-line {:method :GET :request-uri "/public"}}]
     (is (= [200 "file1\nfile2"] (cob-server-router req)))))
+
+
+(deftest test-redirect-1
+  (let [req {:request-line {:method :POST :request-uri "/redirect"}}]
+    (is (= [{:status-code 301 :body "Moved permanently" :Location "http://www.google.com"}
+            (cob-server-router req)]))))
