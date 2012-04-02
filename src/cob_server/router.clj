@@ -18,5 +18,7 @@
        (serve-file "file1"))
   (GET "/public"
        (dir-list "./"))
+  (GET "/redirect"
+       {:status-code 301 :body "Moved permanently" :Location "http://www.google.com"})
   (ANY* ".*"
         [404 "Not Found"]))
