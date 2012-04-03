@@ -42,7 +42,6 @@ module Fixtures
     end
 
     def moved_permanently_response
-        puts @status
         return @status == 301
     end
 
@@ -78,6 +77,8 @@ module Fixtures
     rescue Errno::ECONNREFUSED => e
       econnrefused e
     end
+
+    alias :get_with_following_redirect :get
 
     private
 

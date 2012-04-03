@@ -15,5 +15,5 @@
 | set port | 5000      |
 | get without following redirect | /redirect |
 | check | moved permanently response | true |
-| get | /redirect |
+| get with following redirect | /redirect |
 | check | ok response | true |
