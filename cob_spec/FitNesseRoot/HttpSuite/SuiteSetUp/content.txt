@@ -1,0 +1,16 @@
+!define TEST_SYSTEM {slim}
+!define TEST_RUNNER {rubyslim/lib/run_ruby_slim.rb}
+!define COMMAND_PATTERN {ruby -I %p %m}
+!define PATH_SEPARATOR {-I}
+!path rubyslim/lib
+
+
+!|import|
+|Fixtures|
+
+
+| script | server |
+| set path | /Users/MGT/8thlight/projects/clojure/cob_server/cob_spec/cob-server-1.0.0-SNAPSHOT-standalone.jar |
+| set port | 5000 |
+| set directory | public |
+| start server |
