@@ -9,8 +9,8 @@
 |Fixtures|
 
 
-| script | server |
-| set path | /Users/MGT/8thlight/projects/clojure/cob_server/cob-server-1.0.0-SNAPSHOT-standalone.jar |
-| set port | 5000 |
-| set directory | public |
-| start server |
+| script | http browser |
+| set host | localhost |
+| set port | 5000      |
+| get | /dir_list |
+| check | body has directory contents | public | true |

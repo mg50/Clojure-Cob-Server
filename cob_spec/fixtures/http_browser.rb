@@ -60,6 +60,7 @@ module Fixtures
 
     def body_has_file_contents(file)
       contents = File.open(file, 'rb') { |f| f.read }
+
       @data.include? contents
     end
 
