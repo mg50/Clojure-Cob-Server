@@ -70,6 +70,8 @@ module Fixtures
       begin
         HTTParty.get("http://#{@host}:#{@port}#{url}", :no_follow => true)
       rescue => e
+        #Note: Oddly enough, HTTParty is supposed to raise an error when it successfully retrieves a 301 without following the redirect.
+        #See https://github.com/jnunemaker/httparty/commit/9b978214e07a95c056880cac385877c698e66d39.
         @response = e.response
         @message = response.message
         @status =  response.code.to_i
