@@ -4,5 +4,5 @@
 
 
 
-(defn -main [& args]
-  (run-server cob-server-router))
+(defn -main [& options]
+  (run-server cob-server-router options))
